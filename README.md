@@ -7,3 +7,7 @@ There may be some extra code that is not needed in the files...
 You can type name of some songs to post with comments...
 
 When the application is started go to localhost:8080
+
+## Picture of the application running
+
+![Java-project](https://github.com/user-attachments/assets/bebf3452-310d-47c9-a919-7b47041a5c57)
