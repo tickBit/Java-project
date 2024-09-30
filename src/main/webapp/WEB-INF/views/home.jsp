@@ -54,39 +54,7 @@ p {
 			</div>
 		</div>
 	</nav>
-
-	<div class="container mt-5">
-		<div class="row">
-			<!-- Card 1 -->
-			<div class="col-md-6 mb-5">
-				<div class="card bg-warning">
-					<div class="card-body text-center">
-						<h5 class="card-title">View all tunes</h5>
-						<form action="/musiclist" method="get">
-							<button type="submit" class="btn btn-primary">Submit</button>
-						</form>
-					</div>
-				</div>
-			</div>
-
-			<!-- Card 2 -->
-			<div class="col-md-6 mb-5">
-				<div class="card">
-					<div class="card-body text-center">
-						<h5 class="card-title">Add tune</h5>
-						<form action="/addtune" method="get">
-							<button type="submit" class="btn btn-primary">Submit</button>
-						</form>
-
-					</div>
-				</div>
-			</div>
-			
-				
-		</div>
-	</div>
-
-
+	
 	<!-- Add the Bootstrap JS and Popper.js scripts -->
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
