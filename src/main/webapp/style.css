@@ -1,0 +1,17 @@
+body {
+    background-color:#1e96fc; /* Bootstrap primary blue */
+    color: #fff; /* Text color */
+   
+}
+.navbar-nav .nav-link {
+            font-size: 18px; /* Adjust the font size as needed */
+        }
+.container {
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+
+ 
+      
