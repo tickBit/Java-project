@@ -11,12 +11,12 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.3.4</version> <!-- Käytä tarvittaessa uudempi versio -->
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>3.3.4</version>
+        <relativePath/>
     </parent>
 
     <properties>
-        <java.version>21</java.version> <!-- Muokkaa version mukaan -->
+        <java.version>21</java.version>
     </properties>
 
     <dependencies>
