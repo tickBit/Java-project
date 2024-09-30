@@ -39,11 +39,10 @@
 
 
 <c:set var="tunePosts" value="${tunePosts}" />
-<div class="container mt-5">
+<!--div class="container mt-5"-->
+<div class="tune">
     <h2 class="mb-4 text-center font-weight-bold">Tune Post List</h2>
     
-    <div class="row row-cols-2">
-
         <!-- add new tune form -->
         <frm:form action="addPost" method="post" modelAttribute="newTunePost">
     <div class="mb-3">
@@ -59,12 +58,11 @@
     </div>
 
     <button type="submit" class="btn btn-success">Add Post</button>
-</frm:form>
-
+    </frm:form>
+</div>
 <c:forEach var="tunePost" items="${tunePosts}">
-    <div class="col mb-4">
         
-        <div class="card border-dark bg-dark text-white">
+        <div class="post">
             <div class="card-body">
 
                 <h5 class="card-title">${tunePost.getPostName()}</h5>
@@ -95,9 +93,6 @@
         </div>
     </div>
 </c:forEach>
-
-    </div>
-</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
