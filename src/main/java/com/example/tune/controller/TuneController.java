@@ -8,9 +8,7 @@ import java.nio.file.Paths;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.web.ServerProperties.Tomcat.Resource;
 import org.springframework.core.io.UrlResource;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -110,7 +108,6 @@ public class TuneController {
 			String filePath = uploadDirectory + "/" + file.getOriginalFilename();
 			file.transferTo(new File(filePath));
 	
-			// Tallenna tiedot tietokantaan (esim. songService.save(...))
 			tunePost.setFilePath(filePath);
 
 			if (!commentText.isEmpty()) {
