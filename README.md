@@ -1,10 +1,10 @@
 # Little full stack experiment in Java
 
-This is just a little full stack experiment in Java. I wanted to try to use in-memory database only.
+This is just a little full stack experiment in Java.
 
-There may be some extra code that is not needed in the files...
+## Info
 
-You can type name of some songs to post with comments...
+The database is saved on Linux systems to user's home directory.
 
 When the application is started go to localhost:8080
 
