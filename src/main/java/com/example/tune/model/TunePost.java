@@ -12,6 +12,7 @@ public class TunePost {
     private Long id;
 
     private String postName;
+    private String filePath;
 
     @OneToMany(mappedBy = "tunePost", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<TuneComment> comments = new ArrayList<>();
@@ -51,7 +52,16 @@ public class TunePost {
         return postName;
     }
 
+    public String getFilePath() {
+        return filePath;
+    }
+    
     public void setPostName(String postName) {
         this.postName = postName;
     }
+
+    public void setFilePath(String filePath) {
+        this.filePath = filePath;
+    }
+
 }

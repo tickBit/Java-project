@@ -44,7 +44,7 @@
     <h2 class="mb-4 text-center font-weight-bold">Tune Post List</h2>
     
         <!-- add new tune form -->
-        <frm:form action="addPost" method="post" modelAttribute="newTunePost">
+        <frm:form action="addPost" method="post" modelAttribute="newTunePost" enctype="multipart/form-data">
     <div class="mb-3">
         <!-- name of the tune -->
         <label for="postName" class="form-label">Post Name</label>
@@ -56,8 +56,17 @@
         <label for="commentText" class="form-label">Comment (optional)</label>
         <textarea class="form-control" id="commentText" name="commentText" rows="2"></textarea>
     </div>
-
+    <div class="mb-3">
+        <label for="file">Upload MP3:</label>
+        <input type="file" id="file" name="file" accept=".mp3" required><br><br>    
+    </div>
+    
     <button type="submit" class="btn btn-success">Add Post</button>
+    
+    <!-- Virheilmoitus -->
+    <div th:if="${error}">
+        <p style="color:red" th:text="${error}"></p>
+    </div>
     </frm:form>
 </div>
 <c:forEach var="tunePost" items="${tunePosts}">
@@ -65,7 +74,7 @@
         <div class="post">
             <div class="card-body">
 
-                <h5 class="card-title">${tunePost.getPostName()}</h5>
+                <h5 class="card-title">${tunePost.getPostName()} <a href="play?filePath=${tunePost.getFilePath()}">Play</a></h5>
                 <p class="card-text">
                     
                     <strong>Comments:</strong>
