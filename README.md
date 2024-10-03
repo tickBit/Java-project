@@ -14,4 +14,5 @@ I'm planning to add delete action
 
 ## Picture of the application running
 
-![Java-project](https://github.com/user-attachments/assets/bebf3452-310d-47c9-a919-7b47041a5c57)
+![Java-project](https://github.com/user-attachments/assets/b3a536dd-fa78-4de2-8f33-9605ff5ae7bf)
+
