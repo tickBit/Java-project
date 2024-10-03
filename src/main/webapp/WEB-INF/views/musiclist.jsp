@@ -74,7 +74,11 @@
         <div class="post">
             <div class="card-body">
 
-                <h5 class="card-title">${tunePost.getPostName()} <a href="play?filePath=${tunePost.getFilePath()}">Play</a></h5>
+                <h5 class="card-title">${tunePost.getPostName()}</h5>
+                <p><audio controls preload="none">
+                    <source src="/play?filePath=${tunePost.getFilePath()}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio></p>
                 <p class="card-text">
                     
                     <strong>Comments:</strong>

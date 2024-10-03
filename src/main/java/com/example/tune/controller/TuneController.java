@@ -46,27 +46,27 @@ public class TuneController {
 	}
 
 	@GetMapping("/play")
-    public ResponseEntity<UrlResource> playSong(@RequestParam("filePath") String filePath) {
-        try {
-            Path path = Paths.get(filePath).normalize();
-			
-            UrlResource resource = new UrlResource(path.toUri());
+	public ResponseEntity<UrlResource> playSong(@RequestParam("filePath") String filePath) {
+    try {
+        // Muodosta tiedoston polku ja tarkista sen olemassaolo
+        Path path = Paths.get(filePath).normalize();
+        UrlResource resource = new UrlResource(path.toUri());
 
-            if (resource.exists()) {
-                // Palautetaan tiedosto toistettavaksi
-                return ResponseEntity.ok()
-                        .contentType(MediaType.parseMediaType("audio/mpeg"))
-                        .header(HttpHeaders.CONTENT_DISPOSITION, "inline; filename=\"" + (resource).getFilename() + "\"")
-                        .body(resource);
-            } else {
-				System.out.println("Not found!");
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-            }
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        if (resource.exists()) {
+            // Palautetaan tiedosto toistettavaksi selaimessa
+            return ResponseEntity.ok()
+                    .contentType(MediaType.parseMediaType("audio/mpeg")) // Määritä tiedostotyyppi MP3:ksi
+                    .body(resource);
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
+    } catch (MalformedURLException e) {
+        e.printStackTrace();
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
     }
+}
+
+
 
 	@GetMapping("/musiclist")
 	public String viewTunes(Model model) {
