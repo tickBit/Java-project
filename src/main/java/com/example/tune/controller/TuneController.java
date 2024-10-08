@@ -86,6 +86,14 @@ public class TuneController {
         return "redirect:/musiclist";
     }
 	
+	// delete post
+	@PostMapping("/delete")
+	public String deletePost(@RequestParam("postID") Long postId, @ModelAttribute("tuneComment") TuneComment tuneComment) {
+
+		tunePostService.deleteTunePost(postId);
+		return "redirect:/musiclist";
+	}
+	
 	// tune
 	@PostMapping("/addPost")
     public String addPost(@ModelAttribute("newTunePost") TunePost tunePost, @RequestParam("commentText") String commentText, @RequestParam("file") MultipartFile file, Model model) {

@@ -72,13 +72,28 @@
 <c:forEach var="tunePost" items="${tunePosts}">
         
         <div class="post">
-            <div class="card-body">
+            <frm:form action="delete" method="post" modelAttribute="tuneComment">
+                <div class="row mb-1">
+                    
 
-                <h5 class="card-title">${tunePost.getPostName()}</h5>
+                <div class="col">
+                <h5>${tunePost.getPostName()}</h5>
+                </div>
+                <div class="col">
+                <button class="btn btn-danger" type="submit">Delete post</button>
+                <!-- add hidden field to postID -->
+                <input type="hidden" name="postID" value="${tunePost.id}" />
+                </div>
+                
+                </div>
+
+                </frm:form>
+                
                 <p><audio controls preload="none">
                     <source src="/play?filePath=${tunePost.getFilePath()}" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio></p>
+                
                 <p class="card-text">
                     
                     <strong>Comments:</strong>
@@ -98,11 +113,8 @@
                     <textarea class="form-control" id="commentText" name="text" rows="2" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
-                    </frm:form>
-
-            </div>
-            
-            
+                </frm:form>            
+        
         </div>
     </div>
 </c:forEach>
