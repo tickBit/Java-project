@@ -80,7 +80,7 @@
                 <h5>${tunePost.getPostName()}</h5>
                 </div>
                 <div class="col">
-                <button class="btn btn-danger" type="submit">Delete post</button>
+                <button class="btn btn-danger float-end" type="submit">Delete post</button>
                 <!-- add hidden field to postID -->
                 <input type="hidden" name="postID" value="${tunePost.id}" />
 
