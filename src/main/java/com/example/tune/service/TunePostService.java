@@ -2,6 +2,8 @@ package com.example.tune.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.io.File;
 import java.util.List;
 import java.util.Optional;
 
@@ -42,6 +44,18 @@ public class TunePostService {
 
     // delete TunePost by ID
     public void deleteTunePost(Long id) {
+        
+        TunePost tunePost;
+        tunePost = tunePostRepository.getReferenceById(id);
+        
+        // delete the file too
+        // at least in Linux systems, the path is absolute path to the app's uploads directory
+        //System.out.println(tunePost.getFilePath());
+        
+        File fileObj = new File(tunePost.getFilePath()); 
+        fileObj.delete();
+
+        // delete from database
         tunePostRepository.deleteById(id);
     }
 }

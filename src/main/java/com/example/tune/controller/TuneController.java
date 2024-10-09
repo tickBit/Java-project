@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -88,9 +89,10 @@ public class TuneController {
 	
 	// delete post
 	@PostMapping("/delete")
-	public String deletePost(@RequestParam("postID") Long postId, @ModelAttribute("tuneComment") TuneComment tuneComment) {
-
+	public String deletePost(@RequestParam("postID") Long postId) {
+		
 		tunePostService.deleteTunePost(postId);
+		
 		return "redirect:/musiclist";
 	}
 	

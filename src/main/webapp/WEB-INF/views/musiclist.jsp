@@ -72,9 +72,9 @@
 <c:forEach var="tunePost" items="${tunePosts}">
         
         <div class="post">
-            <frm:form action="delete" method="post" modelAttribute="tuneComment">
+            <frm:form action="delete" method="post">
                 <div class="row mb-1">
-                    
+                
 
                 <div class="col">
                 <h5>${tunePost.getPostName()}</h5>
@@ -83,6 +83,7 @@
                 <button class="btn btn-danger" type="submit">Delete post</button>
                 <!-- add hidden field to postID -->
                 <input type="hidden" name="postID" value="${tunePost.id}" />
+
                 </div>
                 
                 </div>
