@@ -8,11 +8,8 @@ The database is saved on Linux systems to user's home directory.
 
 When the application is started go to localhost:8080
 
-## Future
-
-I'm planning to add delete action
-
 ## Picture of the application running
 
-![Java-project](https://github.com/user-attachments/assets/b3a536dd-fa78-4de2-8f33-9605ff5ae7bf)
+![Java-project-delete](https://github.com/user-attachments/assets/0070c54b-9b11-4532-8746-26fce8040c85)
+
 
